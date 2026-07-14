@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "coding-challenge-client-side-solution",
+    "id": "c91f0e52-6261-41ff-aafe-8744721a4827",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "coding-challenge description"
+      },
+      "longDescription": {
+        "default": "coding-challenge description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "coding-challenge Feature",
+        "description": "The feature that activates elements of the coding-challenge solution.",
+        "id": "19840378-de92-49f1-afb7-0bc925c652ad",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/coding-challenge.sppkg"
+  }
+}
