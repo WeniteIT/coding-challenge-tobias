@@ -66,7 +66,7 @@ export function Lists({ context }: UserGroupsProps): React.ReactElement {
         Available Lists on Site
       </Text>
       <DetailsList
-        items={lists}
+        items={lists.filter((list) => list.BaseTemplate !== 101)}
         columns={[
           {
             key: "column1",
