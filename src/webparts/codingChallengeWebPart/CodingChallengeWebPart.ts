@@ -8,8 +8,6 @@ import {
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 import * as strings from "CodingChallengeWebPartStrings";
-import { CodingChallengeComponent } from "./components/CodingChallenge";
-import { ICodingChallengeProps } from "./components/ICodingChallengeProps";
 import { ReduxProvider } from "./store/reduxProvider";
 export interface ICodingChallengeWebPartProps {
   description: string;
@@ -20,16 +18,11 @@ export default class CodingChallengeWebPart extends BaseClientSideWebPart<ICodin
   private _environmentMessage: string = "";
 
   public render(): void {
-    const element: React.ReactElement<ICodingChallengeProps> =
-      React.createElement(CodingChallengeComponent);
+    const element: React.ReactElement = React.createElement(ReduxProvider, {
+      context: this.context,
+    });
 
-    const storeElement: React.ReactElement = React.createElement(
-      ReduxProvider,
-      {context: this.context},
-      element,
-    );
-
-    ReactDom.render(storeElement, this.domElement);
+    ReactDom.render(element, this.domElement);
   }
 
   protected onInit(): Promise<void> {
@@ -75,7 +68,7 @@ export default class CodingChallengeWebPart extends BaseClientSideWebPart<ICodin
     return Promise.resolve(
       this.context.isServedFromLocalhost
         ? strings.AppLocalEnvironmentSharePoint
-        : strings.AppSharePointEnvironment,
+        : strings.AppSharePointEnvironment
     );
   }
 
@@ -91,7 +84,7 @@ export default class CodingChallengeWebPart extends BaseClientSideWebPart<ICodin
       if (semanticColors.bodyText) {
         this.domElement.style.setProperty(
           "--bodyText",
-          semanticColors.bodyText,
+          semanticColors.bodyText
         );
       } else {
         this.domElement.style.removeProperty("--bodyText");
@@ -106,7 +99,7 @@ export default class CodingChallengeWebPart extends BaseClientSideWebPart<ICodin
       if (semanticColors.linkHovered) {
         this.domElement.style.setProperty(
           "--linkHovered",
-          semanticColors.linkHovered,
+          semanticColors.linkHovered
         );
       } else {
         this.domElement.style.removeProperty("--linkHovered");

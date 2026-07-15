@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slice";
-import spfxReducer from "./spfxSlice";
+import profileReducer from "./profileSlice";
+import siteInformationReducer from "./siteInformationSlice";
+import userGroupReducer from "./userGroupSlice";
+import listReducer from "./listsSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    spfx: spfxReducer
+    profile: profileReducer,
+    site: siteInformationReducer,
+    userGroups: userGroupReducer,
+    list: listReducer
   }
 });
 
